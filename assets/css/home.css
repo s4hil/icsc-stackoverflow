@@ -1,5 +1,117 @@
-.logout-btn {
+:root {
+	--discussion-box-height: 120px;
+}
+.wrapper {
+	background: #e2e8f0;
+	height: 100vh;
+}
+
+.forum-container {
+	display: flex;
+	justify-content: center;
+}
+
+.forum-container .top-bar {
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid grey;
+	padding: 10px;
+}
+
+.top-bar fieldset {
+	width: 200px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.top-bar fieldset:nth-child(1),.top-bar fieldset:nth-child(2){
+	align-items: flex-start;
+
+}
+
+.top-bar fieldset label {
+	margin-bottom: -3px;
+}
+
+.forum-content {
+	width: 100%;
+}
+
+.discussions-container {
+	margin-top: 30px;
+}
+
+.discussion {
+	height: var(--discussion-box-height);
+	background: #fff;
+	border-radius: 5px;
+}
+
+.discussion-topic {
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.discussion-topic:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.discussion-text {
+	margin-top: 5px;
+}
+.discussion-text a{
+	color: var(--blue);
+	font-style: italic;
+	cursor: pointer;
+}
+
+.discussion-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: -8px;
+}
+
+.discussion-box {
+	padding: 10px;
+}
+
+.discussion-user-img{
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.discussion-user-img img{
+	width: 50px;
+	height: 50px;
+}
+
+.discussion-comments-count {
+	height: var(--discussion-box-height);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.discussion-stats {
+	display: flex;
+}
+
+.discussion-stats .ups, .discussion-stats .downs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+}
+
+.ups i, .downs i {
+	margin-right: 5px;
+	cursor: pointer;
 }

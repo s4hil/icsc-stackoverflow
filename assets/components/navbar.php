@@ -17,12 +17,18 @@
           <a class="nav-link dropdown-toggle" href="#" id="accountSetting" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Account
           </a>
-          <ul class="dropdown-menu" aria-labelledby="accountSetting" style="margin-right: 20px;">
-            <li><a class="dropdown-item" href="#">Action</a></li>
+          <ul class="dropdown-menu" aria-labelledby="accountSetting" style="margin-left: -70px;">
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-cogs mr-1"></i> Settings
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="?logout">
+                <i class="fas fa-power-off mr-1"></i> Logout
+              </a>
+            </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-danger" href="?logout"><i class="fas fa-power-off"></i> Logout</a>
         </li>
       </ul>
     </div>
