@@ -11,4 +11,13 @@
 	--primary-light: #C7B98B;
 	--secondary-light: #80AB9D;
 	--mid-dark: #1C5C87;
+	--bright: #fff;
+	--danger: #d9534f;
+}
+
+.copyrights {
+	position: absolute;
+	bottom: 2px;
+	right: 5px;
+	color: var(--bright);
 }
