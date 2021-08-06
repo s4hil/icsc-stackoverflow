@@ -103,10 +103,7 @@
 				</div>
 			</div>
 		</div>
-		<footer class="copyrights">
-			Created with <i class="fas fa-heart"></i> by: 
-			<a href="https://sahilparray.tech"> Sahil Parray </a>
-		</footer>
+	    <?php include 'assets/components/footer.php'; ?>
 	</div>
 	<!-- JS -->
 	<script src="https://kit.fontawesome.com/de41999cf3.js"></script>

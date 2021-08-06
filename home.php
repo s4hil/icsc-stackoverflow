@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html lang="en">
   	<head>
-	    <title>Login - ICSC - StackOverflow</title>
+	    <title>Home - ICSC - StackOverflow</title>
 
 		<!-- Basic Metas -->
 		<meta charset="utf-8">
@@ -25,7 +25,6 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 		
 		<!-- CSS -->
-		<link rel="stylesheet" href="assets/css/particles.css">
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/common.css">
 		<link rel="stylesheet" href="assets/css/home.css">
@@ -39,21 +38,15 @@
 	    	<?php include 'assets/components/navbar.php'; ?>
 	    	<section class="forum-container container mt-5">
 	    		<div class="forum-content">
+	    			<div class="menu-btn">
+	    				<i class="fas fa-bars" id="menu-icon"></i> Menu
+	    			</div>
 	    			<div class="top-bar">
 	    				<fieldset>
-	    					<label>Search:</label>
 	    					<input type="text" id="search-forum" class="form-control" placeholder="Search Forum">
 	    				</fieldset>
 	    				<fieldset>
-	    					<label>Sort:</label>
-	    					<select class="form-control">
-	    					<option>Latest</option>
-	    					<option>Unsolved</option>
-	    					<option>Popular</option>
-	    				</select>
-	    				</fieldset>
-	    				<fieldset>
-	    					<button class="btn btn-primary" id="addDiscussion">
+	    					<button class="ml-auto btn btn-primary" id="addDiscussion" data-bs-toggle="modal" data-bs-target="#addDiscussionModal">
 	    					<i class="fas fa-plus"></i> Add Discussion
 	    				</button>
 	    				</fieldset>
@@ -61,12 +54,12 @@
 	    			<div class="discussions-container container">
 		    			<!-- Begin Row-->
 		    			<div class='discussion row justify-content-around'>
-		    				<div class="col-3 col-sm-3 col-lg-1">
+		    				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
 		    					<div class="discussion-user-img">
-		    						<img src="assets/imgs/035-junior.png">
+		    						<img src="assets/imgs/035-junior.png" width="100%">
 		    					</div>
 		    				</div>
-		    				<div class="col-3 col-sm-3 col-lg-10">
+		    				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
 		    					<div class="discussion-box">
 		    						<header class="discussion-topic">Realtime fetching data</header>
 		    						<p class="discussion-text">How to fetch data using ajax call with a php script...</p>
@@ -76,51 +69,118 @@
 				    							<i class="fas fa-thumbs-up"></i>
 				    							<span>17</span>&nbsp; likes
 				    						</div>
+				    						&nbsp; &nbsp;
+				    						<div class="comments">
+				    							<i class="fas fa-comment-dots"></i>
+				    							<span>17</span>&nbsp; comments
+				    						</div>
 			    						</div>
-		    							<div class="discussion-credits">Sahil on 6 August, 2021</div>
+		    							<div class="discussion-credits">
+		    								<i class="fas fa-calendar-alt"></i> 08/08/2021
+		    							</div>
 		    						</footer>
-		    					</div>
-		    				</div>
-		    				<div class="col-3 col-sm-3 col-lg-1">
-		    					<div class="discussion-comments-count">
-		    						<i class="fas fa-comment-dots mr-1"></i> 98
 		    					</div>
 		    				</div>
 		    			</div><br>
 		    			<!-- End Row-->
 		    			<!-- Begin Row-->
 		    			<div class='discussion row justify-content-around'>
-		    				<div class="col-3 col-sm-3 col-lg-1">
+		    				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
 		    					<div class="discussion-user-img">
-		    						<img src="assets/imgs/035-junior.png">
+		    						<img src="assets/imgs/035-junior.png" width="100%">
 		    					</div>
 		    				</div>
-		    				<div class="col-3 col-sm-3 col-lg-10">
+		    				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
 		    					<div class="discussion-box">
-		    						<header class="discussion-topic">CRUD - AJAX - PHP</header>
-		    						<p class="discussion-text">How to perform crud ooperations using js, php, ajax.</p>
+		    						<header class="discussion-topic">Realtime fetching data</header>
+		    						<p class="discussion-text">How to fetch data using ajax call with a php script...</p>
 		    						<footer class="discussion-footer">
 		    							<div class="discussion-stats">
 				    						<div class="ups">
 				    							<i class="fas fa-thumbs-up"></i>
-				    							<span>20</span>&nbsp; likes
+				    							<span>17</span>&nbsp; likes
+				    						</div>
+				    						&nbsp; &nbsp;
+				    						<div class="comments">
+				    							<i class="fas fa-comment-dots"></i>
+				    							<span>17</span>&nbsp; comments
 				    						</div>
 			    						</div>
-		    							<div class="discussion-credits">Shoaib on 4 August, 2021</div>
+		    							<div class="discussion-credits">Sahil on 6 August, 2021</div>
 		    						</footer>
-		    					</div>
-		    				</div>
-		    				<div class="col-3 col-sm-3 col-lg-1">
-		    					<div class="discussion-comments-count">
-		    						<i class="fas fa-comment-dots mr-1"></i> 12
 		    					</div>
 		    				</div>
 		    			</div><br>
 		    			<!-- End Row-->
+		    			<!-- Begin Row-->
+		    			<div class='discussion row justify-content-around'>
+		    				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
+		    					<div class="discussion-user-img">
+		    						<img src="assets/imgs/035-junior.png" width="100%">
+		    					</div>
+		    				</div>
+		    				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
+		    					<div class="discussion-box">
+		    						<header class="discussion-topic">Realtime fetching data</header>
+		    						<p class="discussion-text">How to fetch data using ajax call with a php script...</p>
+		    						<footer class="discussion-footer">
+		    							<div class="discussion-stats">
+				    						<div class="ups">
+				    							<i class="fas fa-thumbs-up"></i>
+				    							<span>17</span>&nbsp; likes
+				    						</div>
+				    						&nbsp; &nbsp;
+				    						<div class="comments">
+				    							<i class="fas fa-comment-dots"></i>
+				    							<span>17</span>&nbsp; comments
+				    						</div>
+			    						</div>
+		    							<div class="discussion-credits">Sahil on 6 August, 2021</div>
+		    						</footer>
+		    					</div>
+		    				</div>
+		    			</div><br>
+		    			<!-- End Row-->
+		    			
 	    			</div>
 	    		</div>
 	    	</section>
+	    	<?php include 'assets/components/footer.php'; ?>
 		</main>
+
+		<!-- BEGIN MODAL -->
+		<!-- Modal -->
+		<div class="modal fade" id="addDiscussionModal" tabindex="-1" aria-labelledby="addDiscussionModal" aria-hidden="true">
+		  	<div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+			      	<div class="modal-header">
+			        	<h5 class="modal-title" id="exampleModalLabel">Add Discussion</h5>
+			      	</div>
+			      	<div class="modal-body">
+			        	<form class="form">
+			        		<fieldset class="form-group">
+			        			<label><i class="fas fa-quote-right"></i> Topic</label>
+			        			<input type="text" id="dTopic" class="form-control">
+			        		</fieldset>
+			        		<fieldset class="form-group">
+			        			<label><i class="fas fa-clipboard"></i> Details</label>
+			        			<textarea type="text" id="dDetails" class="form-control" rows="3"></textarea>
+			        		</fieldset>
+			        		<fieldset class="form-group">
+			        			<label><i class="fas fa-image"></i> Images</label>
+			        			<input class="form-control" type="file" name="" accept="image/*">
+			        		</fieldset>
+			        	</form>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			        	<button type="button" class="btn btn-primary">Post</button>
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+		<!-- END MODAL -->
+
 	    <!-- JS -->
 		<script src="https://kit.fontawesome.com/de41999cf3.js"></script>
 		<script src="assets/js/jquery.min.js"></script>

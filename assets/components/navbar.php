@@ -15,7 +15,7 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="accountSetting" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
+          <?php echo $_SESSION['userName']; ?>
           </a>
           <ul class="dropdown-menu" aria-labelledby="accountSetting" style="margin-left: -70px;">
             <li>
