@@ -51,98 +51,20 @@
 	    				</button>
 	    				</fieldset>
 	    			</div>
-	    			<div class="discussions-container container">
+	    			<div class="discussions-container container" id="discussions">
+
 		    			<!-- Begin Row-->
-		    			<div class='discussion row justify-content-around'>
-		    				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
-		    					<div class="discussion-user-img">
-		    						<img src="assets/imgs/035-junior.png" width="100%">
-		    					</div>
-		    				</div>
-		    				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
-		    					<div class="discussion-box">
-		    						<header class="discussion-topic">Realtime fetching data</header>
-		    						<p class="discussion-text">How to fetch data using ajax call with a php script...</p>
-		    						<footer class="discussion-footer">
-		    							<div class="discussion-stats">
-				    						<div class="ups">
-				    							<i class="fas fa-thumbs-up"></i>
-				    							<span>17</span>&nbsp; likes
-				    						</div>
-				    						&nbsp; &nbsp;
-				    						<div class="comments">
-				    							<i class="fas fa-comment-dots"></i>
-				    							<span>17</span>&nbsp; comments
-				    						</div>
-			    						</div>
-		    							<div class="discussion-credits">
-		    								<i class="fas fa-calendar-alt"></i> 08/08/2021
-		    							</div>
-		    						</footer>
-		    					</div>
-		    				</div>
-		    			</div><br>
-		    			<!-- End Row-->
-		    			<!-- Begin Row-->
-		    			<div class='discussion row justify-content-around'>
-		    				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
-		    					<div class="discussion-user-img">
-		    						<img src="assets/imgs/035-junior.png" width="100%">
-		    					</div>
-		    				</div>
-		    				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
-		    					<div class="discussion-box">
-		    						<header class="discussion-topic">Realtime fetching data</header>
-		    						<p class="discussion-text">How to fetch data using ajax call with a php script...</p>
-		    						<footer class="discussion-footer">
-		    							<div class="discussion-stats">
-				    						<div class="ups">
-				    							<i class="fas fa-thumbs-up"></i>
-				    							<span>17</span>&nbsp; likes
-				    						</div>
-				    						&nbsp; &nbsp;
-				    						<div class="comments">
-				    							<i class="fas fa-comment-dots"></i>
-				    							<span>17</span>&nbsp; comments
-				    						</div>
-			    						</div>
-		    							<div class="discussion-credits">Sahil on 6 August, 2021</div>
-		    						</footer>
-		    					</div>
-		    				</div>
-		    			</div><br>
-		    			<!-- End Row-->
-		    			<!-- Begin Row-->
-		    			<div class='discussion row justify-content-around'>
-		    				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
-		    					<div class="discussion-user-img">
-		    						<img src="assets/imgs/035-junior.png" width="100%">
-		    					</div>
-		    				</div>
-		    				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
-		    					<div class="discussion-box">
-		    						<header class="discussion-topic">Realtime fetching data</header>
-		    						<p class="discussion-text">How to fetch data using ajax call with a php script...</p>
-		    						<footer class="discussion-footer">
-		    							<div class="discussion-stats">
-				    						<div class="ups">
-				    							<i class="fas fa-thumbs-up"></i>
-				    							<span>17</span>&nbsp; likes
-				    						</div>
-				    						&nbsp; &nbsp;
-				    						<div class="comments">
-				    							<i class="fas fa-comment-dots"></i>
-				    							<span>17</span>&nbsp; comments
-				    						</div>
-			    						</div>
-		    							<div class="discussion-credits">Sahil on 6 August, 2021</div>
-		    						</footer>
-		    					</div>
-		    				</div>
-		    			</div><br>
-		    			<!-- End Row-->
 		    			
+		    			<!-- End Row-->
 	    			</div>
+	    			<nav class="d-flex justify-content-center mt-4">
+					  	<ul class="pagination">
+						    <li class="page-item">
+						      <span class="page-link bg-primary text-white disabled">Navigation</span>
+						    </li>
+						    <div id="pagination" class="d-flex"></div>
+					  	</ul>
+					</nav>
 	    		</div>
 	    	</section>
 	    	<?php include 'assets/components/footer.php'; ?>

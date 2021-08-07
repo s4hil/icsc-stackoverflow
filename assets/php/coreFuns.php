@@ -48,4 +48,70 @@ function checkDuplicateUser($rollNumber)
         return false;
     }
 }
+
+// get Date from timestamp
+function getDateFromStamp($stamp)
+{
+    $dateArray = explode(' ', $stamp);
+    $date = $dateArray[0];
+    return $date;
+}
+
+// Get like count with discussion id
+function getLikeCount($id)
+{
+    global $conn;
+    $sql = "SELECT * FROM `_likes` WHERE `d_id` = $id";
+    $res = mysqli_query($conn, $sql);
+    if ($res) {
+        $likes = mysqli_num_rows($res);
+    }
+    else {
+        $likes = 0;
+    }
+    return $likes;
+}
+// Fetch user name
+function getUserName($id)
+{
+    global $conn;
+    $sql = "SELECT * FROM `_users` WHERE `user_id` = $id LIMIT 1";
+    $res = mysqli_query($conn, $sql);
+    if ($res) {
+        $user = mysqli_fetch_array($res);
+        return $user['full_name'];
+    }
+    else {
+        return "Err!";
+    }
+}
+
+// Fetch comment count
+function getCommentCount($id)
+{
+    global $conn;
+    $sql = "SELECT * FROM `_comments` WHERE `d_id` = $id";
+    $res = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        return mysqli_num_rows($res);
+    }
+    else {
+        return 0;
+    }
+}
+
+// Fetch user img name
+function getUserImg($id)
+{
+    global $conn;
+    $sql = "SELECT * FROM `_users` WHERE `user_id` = $id LIMIT 1";
+    $res = mysqli_query($conn, $sql);
+    if ($res) {
+        $user = mysqli_fetch_array($res);
+        return $user['user_img'];
+    }
+    else {
+        return "";
+    }
+}
 ?>

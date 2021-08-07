@@ -45,6 +45,10 @@
 	width: 100%;
 }
 
+header > a {
+	color: var(--dark-grey);
+}
+
 .discussions-container {
 	margin-top: 30px;
 }
@@ -59,11 +63,17 @@
 }
 
 .discussion-topic {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.discussion-topic a{
 	font-weight: 600;
 	font-size: 1.2rem;
 }
 
-.discussion-topic:hover {
+.discussion-topic a:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -123,6 +133,10 @@
 
 .ups i, .downs i {
 	margin-right: 5px;
+	cursor: pointer;
+}
+
+.page-nav-item{
 	cursor: pointer;
 }
 

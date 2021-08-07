@@ -10,14 +10,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="home.php"> 
+          <i class="fas fa-home"></i> Home</a>
         </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="accountSetting" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item">
+          <a class="nav-link" href="about.php"><i class="fas fa-info-circle"></i> About</a>
+        </li>
+        <li class="nav-item dropdown"> 
+          <a class="nav-link dropdown-toggle" href="#" id="accountSetting" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i>
           <?php echo $_SESSION['userName']; ?>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="accountSetting" style="margin-left: -70px;">
+          <ul class="dropdown-menu" aria-labelledby="accountSetting" style="margin-left: -15px;">
             <li>
               <a class="dropdown-item" href="#">
                 <i class="fas fa-cogs mr-1"></i> Settings
