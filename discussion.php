@@ -3,10 +3,21 @@
 	if (isset($_SESSION['loginStatus'])) {
 		if ($_SESSION['loginStatus'] == true) {
 
+			include 'assets/php/config.php';
+			include 'assets/php/coreFuns.php';
+
 			if (isset($_GET['logout'])) {
 				session_destroy();
 				header('location: index.php');
 			}
+
+			if (!isset($_GET['dID'])) {
+				die("Discussion Not Available");
+			}
+			else {
+				$d_id = $_GET['dID'];
+			}
+
 ?>
 
 
@@ -40,17 +51,34 @@
 	    	<section class="container">
 	    		<div class="discussion-container mt-5">
 	    			<div class="top-bar">
+
+
+	    				<?php
+	    					// fetching rec
+	    					$sql = "SELECT * FROM `_discussions` WHERE `d_id` = $d_id LIMIT 1";
+	    					$res = mysqli_query($conn, $sql);
+	    					$row = mysqli_fetch_array($res);
+
+	    					//setting vars
+	    					$topic = htmlentities($row['topic']);
+	    					$details = htmlentities($row['details']);
+	    					$details = htmlentities($row['details']);
+	    					$name = fetchUsername($d_id);
+	    				?>
+
+
 		    			<div>
 		    				<img src="assets/imgs/035-junior.png">
-		 					<span>Sahil Parray</span>
+		 					<span><?php echo $name; ?></span>
 	    				</div>
 	    				<a href="home.php" class="btn btn-secondary"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
 	    			</div>
-	    			<div class="discussion-content">
-	    				<header>Realtime fetching data</header>
-    					<p>
-    						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.
-    					</p>
+	    			<div class="discussion-content" d-id="<?php echo $d_id; ?>">
+
+
+
+	    				<header><?php echo $topic; ?></header>
+    					<p><?php echo $details; ?></p>
     					<button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#imgModal">View Image</button>
 
     					<div class="comments-container">

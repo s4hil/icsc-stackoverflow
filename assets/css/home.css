@@ -140,6 +140,16 @@ header > a {
 	cursor: pointer;
 }
 
+li.page-item:nth-child(1) span{
+	background: var(--blue);
+	color: #fff;
+}
+
+.active-pill {
+	background: var(--blue) !important;
+	color: #fff !important;
+}
+
 .copyrights {
 	color: var(--blue);
 }

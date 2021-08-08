@@ -33,6 +33,8 @@
 		$res = mysqli_query($conn, $sql);
 		if ($res) {
 			while ($row = mysqli_fetch_array($res)) {
+
+				$row['details'] = limitText($row['details'], 40);
 				$row['date'] = getDateFromStamp($row['timestamp']);
 				$row['likes'] = getLikeCount($row['d_id']);
 				$row['username'] = getUserName($row['user_id']);

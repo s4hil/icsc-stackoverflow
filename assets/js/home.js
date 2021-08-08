@@ -10,7 +10,7 @@ $(document).ready(()=>{
 	});
 
 	// Render Discussion Item
-	function renderDiscussionItem(dp ,name, topic, details, likes, comments , date) {
+	function renderDiscussionItem(id, dp, name, topic, details, likes, comments , date) {
 		return `
 			<div class='discussion row justify-content-around'>
 				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
@@ -21,7 +21,7 @@ $(document).ready(()=>{
 				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
 					<div class="discussion-box">
 						<header class="discussion-topic">
-							<a href="discussion.php">
+							<a href="discussion.php?dID=`+ id +`">
 								`+ topic + `
 							</a>
 							<div class="d-author">`+ name +`</div>
@@ -62,7 +62,7 @@ $(document).ready(()=>{
 			success: function (data) {
 				x = data;
 				for (let i = 0; i < x.length; i++){
-					output += renderDiscussionItem(x[i].dp, x[i].username, x[i].topic, x[i].details, x[i].likes, x[i].comments, x[i].date ); 
+					output += renderDiscussionItem(x[i].d_id, x[i].dp, x[i].username, x[i].topic, x[i].details, x[i].likes, x[i].comments, x[i].date ); 
 				}
 
 				$("#discussions").html(output);
@@ -98,9 +98,18 @@ $(document).ready(()=>{
 	}
 	loadPagination();
 
+	// Remove active status from nav pills
+	function unActivatePills() {
+		$('.page-link').removeClass('active-pill');
+		$('.page-link').css('background', '#fff');
+		$('.page-link').css('color', 'var(--blue');
+	}
+
 	// Add functions to pagination buttons
 	$("#pagination").on('click', '.page-nav-item', function () {
 		let page = $(this).attr('btn-id');
+		unActivatePills();
+		$(this).children("span").addClass('active-pill');
 		loadDiscussions(page);
 	});
 }); // main

@@ -17,7 +17,7 @@ session_start();
 			if ($user['roll_no'] == $rollNumber && $user['password'] == $password) {
 				$_SESSION['loginStatus'] = true;
 				$_SESSION['userName'] = $user['full_name'];
-				$_SESSION['userRollNumber'] = $user['roll_no'];
+				$_SESSION['userID'] = $user['user_id'];
 				header('location: home.php');
 			}
 			else {

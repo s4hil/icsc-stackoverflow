@@ -71,7 +71,7 @@ function getLikeCount($id)
     }
     return $likes;
 }
-// Fetch user name
+// Fetch user name from users tbl
 function getUserName($id)
 {
     global $conn;
@@ -79,7 +79,8 @@ function getUserName($id)
     $res = mysqli_query($conn, $sql);
     if ($res) {
         $user = mysqli_fetch_array($res);
-        return $user['full_name'];
+        $nameArr  = explode(' ', $user['full_name']);
+        return $nameArr[0];
     }
     else {
         return "Err!";
@@ -114,4 +115,55 @@ function getUserImg($id)
         return "";
     }
 }
+
+// Limit Text Length
+function limitText($str, $len)
+{
+    return substr($str, 0, $len)."...";
+}
+
+// Uploading image
+function uploadImg($img_name, $img_size, $tmp_name)
+{
+    $result = array();
+    $imgNameArr = explode('.', $img_name);
+    $img_ext = strtolower(end($imgNameArr));
+    $location = '../../uploads/discussions/'.rand(100,999).$img_name;
+
+    $max_size = 513000;
+    if ($img_size<$max_size && ($img_ext == "jpg" || $img_ext == "jpeg" || $img_ext == "png")){
+            
+        if (move_uploaded_file($tmp_name, $location)) {
+            $result['status'] = true;
+        }
+        else {
+            $result['status'] = false;
+            $result['msg'] = "Error uploading file!";
+        }
+    }
+    else {
+        $result['status'] = false;
+        $result['msg'] = "Max image size is 500kb & allowed formats are jpg &png.";
+    }
+    return $result;
+}
+
+// fetch username by discussion id
+function fetchUsername($id)
+{
+    global $conn;
+    $sql = "SELECT * FROM `_discussions` WHERE `d_id` = $id LIMIT 1";
+    $res = mysqli_query($conn, $sql);
+    if ($res) {
+        $dis = mysqli_fetch_array($res);
+        $userID = $dis['user_id'];
+        $sql = "SELECT * FROM `_users` WHERE `user_id` = $userID";
+        $res = mysqli_query($conn, $sql);
+        if ($res) {
+            $user = mysqli_fetch_array($res);
+            return $user['full_name'];
+        }
+    }    
+}
+
 ?>

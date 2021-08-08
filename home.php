@@ -1,12 +1,12 @@
 <?php
 	include 'loginCheck.php';
-	if (isset($_SESSION['loginStatus'])) {
-		if ($_SESSION['loginStatus'] == true) {
-
-			if (isset($_GET['logout'])) {
-				session_destroy();
-				header('location: index.php');
-			}
+	if (isset($_SESSION['loginStatus']) && $_SESSION['loginStatus'] != true) {
+		die("You seem lost buddy!");
+}
+if (isset($_GET['logout'])) {
+	session_destroy();
+	header('location: index.php');
+}
 ?>
 
 
@@ -78,26 +78,26 @@
 			      	<div class="modal-header">
 			        	<h5 class="modal-title" id="exampleModalLabel">Add Discussion</h5>
 			      	</div>
-			      	<div class="modal-body">
-			        	<form class="form">
+			      	<form class="form" action="assets/php/api/addDiscussion.php" method="POST" enctype="multipart/form-data">
+			      		<div class="modal-body">
 			        		<fieldset class="form-group">
 			        			<label><i class="fas fa-quote-right"></i> Topic</label>
-			        			<input type="text" id="dTopic" class="form-control">
+			        			<input type="text" name="topic" class="form-control">
 			        		</fieldset>
 			        		<fieldset class="form-group">
 			        			<label><i class="fas fa-clipboard"></i> Details</label>
-			        			<textarea type="text" id="dDetails" class="form-control" rows="3"></textarea>
+			        			<textarea type="text" name="details" class="form-control" rows="3"></textarea>
 			        		</fieldset>
 			        		<fieldset class="form-group">
 			        			<label><i class="fas fa-image"></i> Images</label>
-			        			<input class="form-control" type="file" name="" accept="image/*">
+			        			<input class="form-control" type="file" name="img" accept="image/*">
 			        		</fieldset>
-			        	</form>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-			        	<button type="button" class="btn btn-primary">Post</button>
-			      	</div>
+			      		</div>
+				      	<div class="modal-footer">
+				        	<div class="btn btn-secondary" data-bs-dismiss="modal">Close</div>
+				        	<button type="submit" class="btn btn-success" name="post">Post</button>
+				      	</div>
+			      	</form>
 			    </div>
 		  	</div>
 		</div>
@@ -111,11 +111,3 @@
 
   	</body>
 </html>
-
-<?php
-		}
-	}
-	else {
-		echo "<h1>You seem lost!</h1>";
-	}
-?>
