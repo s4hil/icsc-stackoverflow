@@ -82,53 +82,21 @@
     					<button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#imgModal">View Image</button>
 
     					<div class="comments-container">
-    						<header>Comments (3)</header>
+    						<header>Comments (<span id="comment-count">0</span>)</header>
+    						<div id="comments-content">
     						<!-- Begin Comment -->
-    						<div class="comment row mt-4">
-    							<div class="col-2 col-sm-1 col-lg-1">
-    								<img src="assets/imgs/035-junior.png" width="50">
-    							</div>
-    							<div class="col-8 col-sm-8 col-lg-10 comment-col">
-    								<header>Sahil Parray</header>
-    								<div class="comment-text">
-    									Sorry For the bug!
-    								</div>
-    							</div>
-    							<div class="col-1 col-sm-1 col-lg-1">
-    								<button class="btn btn-danger">
-    									<i class="fas fa-trash-alt"></i>
-    								</button>
-    							</div>
-    						</div>
-    						<!-- End Comment -->
-    						<!-- Begin Comment -->
-    						<div class="comment row mt-4">
-    							<div class="col-2 col-sm-1 col-lg-1">
-    								<img src="assets/imgs/035-junior.png" width="50">
-    							</div>
-    							<div class="col-8 col-sm-8 col-lg-10 comment-col">
-    								<header>Sahil Parray</header>
-    								<div class="comment-text">
-    									Sorry For the bug!
-    								</div>
-    							</div>
-    							<div class="col-1 col-sm-1 col-lg-1">
-    								<button class="btn btn-danger">
-    									<i class="fas fa-trash-alt"></i>
-    								</button>
-    							</div>
-    						</div>
-    						<!-- End Comment -->
     						
+    						<!-- End Comment -->
+    						</div>
     					</div>
     					<div class="add-comment mt-5">
-    						<form class="form">
+    						<form class="form comment-form">
     							<fieldset class="form-group">
     								<label>Post a comment</label>
-    								<textarea class="form-control comment-text" rows="3" placeholder="Enter Comment Text"></textarea>
+    								<textarea class="form-control" id="comment-text" rows="3" placeholder="Enter Comment Text"></textarea>
     							</fieldset>
     							<fieldset class="form-group">
-    								<button type="submit" class="btn btn-success">Post</button>
+    								<button type="submit" class="btn btn-success" id="addComment">Post</button>
     							</fieldset>
     						</form>
     					</div>

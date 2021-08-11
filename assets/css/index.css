@@ -5,6 +5,10 @@
 	overflow: hidden;
 }
 
+::placeholder {
+	background: var(--primary-dark);
+}
+
 .particles canvas {
 	position: fixed;
 }

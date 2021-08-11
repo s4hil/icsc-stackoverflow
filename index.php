@@ -21,6 +21,17 @@
 
 	<!-- Icon -->
 	<link rel="icon" href="assets/imgs/favicon.png">
+
+	<!-- One Signal -->
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+	<script>
+	  window.OneSignal = window.OneSignal || [];
+	  OneSignal.push(function() {
+	    OneSignal.init({
+	      appId: "f27f71f5-df9a-4b92-b471-f14c92ffdb6e",
+	    });
+	  });
+	</script>
 </head>
 <body>
 	<div id="particles-js" class="particles"></div>

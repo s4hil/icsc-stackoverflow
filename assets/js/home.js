@@ -85,7 +85,7 @@ $(document).ready(()=>{
 			success: function (data) {
 				if (data.status == true) {
 					let pages = data.pages;
-					for (let i = 1; i < pages; i++){
+					for (let i = 1; i <= pages; i++){
 						output += "<li class='page-item page-nav-item' btn-id='"+i+"'><span class='page-link'>"+ i +"</span></li>";
 					}
 					$("#pagination").html(output);
