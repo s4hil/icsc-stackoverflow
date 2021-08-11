@@ -5,10 +5,6 @@
 	overflow: hidden;
 }
 
-::placeholder {
-	background: var(--primary-dark);
-}
-
 .particles canvas {
 	position: fixed;
 }
@@ -70,7 +66,6 @@
 
 .form-input {
 	border: none;
-	background: none;
 	outline: none;
 	width: 100%;
 	color: var(--bright);

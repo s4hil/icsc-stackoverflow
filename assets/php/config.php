@@ -15,6 +15,7 @@
 	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name) or die('Failed to connect');
 
 	// One Signal Keys
-	$app_id = ;
+	$app_id = "f27f71f5-df9a-4b92-b471-f14c92ffdb6e";
+	$one_signal_token = "ZDFkZjUxNzUtMzgwNi00MmJlLTk0ODAtNmU4YTAxNGM0ZTg1";
 */
 ?>
