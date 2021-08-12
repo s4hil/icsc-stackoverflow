@@ -16,7 +16,7 @@
 	if (mysqli_num_rows($res) > 0) {
 		while ($row = mysqli_fetch_array($res)) {
 			$row['date'] = getDateFromStamp($row['timestamp']);
-			$row['user'] = fetchUsername($row['d_id']);
+			$row['user'] = getUserName($row['user_id']);
 			$row['img'] = getUserImg($row['user_id']);
 			$row['count'] = mysqli_num_rows($res);
 			$response[] = $row;

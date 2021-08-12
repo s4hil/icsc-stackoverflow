@@ -79,8 +79,7 @@ function getUserName($id)
     $res = mysqli_query($conn, $sql);
     if ($res) {
         $user = mysqli_fetch_array($res);
-        $nameArr  = explode(' ', $user['full_name']);
-        return $nameArr[0];
+        return $user['full_name'];
     }
     else {
         return "Err!";
@@ -149,7 +148,7 @@ function uploadImg($img_name, $img_size, $tmp_name)
 }
 
 // fetch username by discussion id
-function fetchUsername($id)
+function fetcUserByDid($id)
 {
     global $conn;
     $sql = "SELECT * FROM `_discussions` WHERE `d_id` = $id LIMIT 1";
@@ -157,13 +156,14 @@ function fetchUsername($id)
     if ($res) {
         $dis = mysqli_fetch_array($res);
         $userID = $dis['user_id'];
-        $sql = "SELECT * FROM `_users` WHERE `user_id` = $userID";
-        $res = mysqli_query($conn, $sql);
-        if ($res) {
-            $user = mysqli_fetch_array($res);
+        $sql2 = "SELECT * FROM `_users` WHERE `user_id` = $userID";
+        $res2 = mysqli_query($conn, $sql2);
+        if ($res2) {
+            $user = mysqli_fetch_array($res2);
             return $user['full_name'];
         }
     }    
 }
+
 
 ?>

@@ -63,39 +63,13 @@ $(document).ready(()=>{
 		$(".login-box").fadeIn();
 	});
 
-	// Sign up 
-	$("#signUp-btn").click((e)=>{
-		e.preventDefault();
-
-		let rollNo = $("#rollNumber").val();
-		let name = $("#fullname").val();
-		let email = $("#email").val();
-		let password = $("#password").val();
-
-		let rawData = { rollNumber:rollNo, name:name, email:email, password:password };
-		let data = JSON.stringify(rawData);
-		$.ajax({
-			url: "assets/php/api/createAccount.php",
-			method: "POST",
-			data: data,
-			dataType: "json",
-			success: function (data) {
-				if (data.status == true) {
-					$(".sign-up-form")[0].reset();
-					$(".sign-up-box").hide();
-					$(".login-box").fadeIn();
-					alert(data.msg);
-				}
-				else if (data.status == false){
-					$("#msg").html("<div class='alert alert-warning'><i class='fas fa-info-circle'></i> "+ data.msg +"</div>");
-				}
-				else {
-					alert("Something Went Wrong!");
-				}
-			},
-			error: function () {
-				console.log("err with add ac req!");
-			}
-		});
-	});
+	
+	// Show dp preview 
+	$("#dp").on('change', function (event) {
+		if(event.target.files.length > 0){
+	    var src = URL.createObjectURL(event.target.files[0]);
+	    var preview = document.getElementById("dpPreview");
+	    preview.src = src;
+	  }
+	})
 }); // Main

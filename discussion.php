@@ -63,7 +63,7 @@
 	    					$topic = htmlentities($row['topic']);
 	    					$details = htmlentities($row['details']);
 	    					$details = htmlentities($row['details']);
-	    					$name = fetchUsername($d_id);
+	    					$name = fetcUserByDid($d_id);
 	    				?>
 
 

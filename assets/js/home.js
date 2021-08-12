@@ -13,9 +13,9 @@ $(document).ready(()=>{
 	function renderDiscussionItem(id, dp, name, topic, details, likes, comments , date) {
 		return `
 			<div class='discussion row justify-content-around'>
-				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1">
+				<div class="first-col col-2 col-xs-2 col-sm-2 col-lg-1 bg-dark">
 					<div class="discussion-user-img">
-						<img src="assets/imgs/`+dp+`" width="100%">
+						<img class='user-avatar' src="assets/uploads/userImgs/`+dp+`" width="100%">
 					</div>
 				</div>
 				<div class="mid-col col-10 col-xs-10 col-sm-10 col-lg-11">
@@ -64,7 +64,7 @@ $(document).ready(()=>{
 				for (let i = 0; i < x.length; i++){
 					output += renderDiscussionItem(x[i].d_id, x[i].dp, x[i].username, x[i].topic, x[i].details, x[i].likes, x[i].comments, x[i].date ); 
 				}
-
+				$("#loader").hide();
 				$("#discussions").html(output);
 			},
 			error: function () {

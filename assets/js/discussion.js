@@ -5,7 +5,7 @@ $(document).ready(()=>{
 		return `
 			<div class="comment row mt-4">
 				<div class="col-2 col-sm-1 col-lg-1">
-					<img src="assets/imgs/`+img+`" width="50">
+					<img class='user-avatar' src="assets/uploads/userImgs/`+img+`" width="50">
 				</div>
 				<div class="col-8 col-sm-8 col-lg-9 comment-col">
 					<header>`+user+`</header>

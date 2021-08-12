@@ -37,7 +37,8 @@
 				$row['details'] = limitText($row['details'], 40);
 				$row['date'] = getDateFromStamp($row['timestamp']);
 				$row['likes'] = getLikeCount($row['d_id']);
-				$row['username'] = getUserName($row['user_id']);
+				$full_name = explode(' ', getUserName($row['user_id']));
+				$row['username'] = $full_name[0];
 				$row['comments'] = getCommentCount($row['d_id']);
 				$row['dp'] = getUserImg($row['user_id']);
 				$response[] = $row;

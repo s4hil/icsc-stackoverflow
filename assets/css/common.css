@@ -17,9 +17,3 @@
 	--dark-grey: #343a40;
 }
 
-.copyrights {
-	position: absolute;
-	bottom: 2px;
-	right: 5px;
-	color: var(--bright);
-}

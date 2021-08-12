@@ -21,17 +21,6 @@
 
 	<!-- Icon -->
 	<link rel="icon" href="assets/imgs/favicon.png">
-
-	<!-- One Signal -->
-	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-	<script>
-	  window.OneSignal = window.OneSignal || [];
-	  OneSignal.push(function() {
-	    OneSignal.init({
-	      appId: "e6537f3d-1443-4dcd-b6f8-65cc44066370",
-	    });
-	  });
-	</script>
 </head>
 <body>
 	<div id="particles-js" class="particles"></div>
@@ -77,10 +66,10 @@
 					<header class="form-header">
 						Sign Up
 					</header>
-					<form class="form sign-up-form">
+					<form class="form sign-up-form" method="POST" action="assets/php/signUp.php" enctype="multipart/form-data">
 						<fieldset class="form-group">
 							<label>Roll Number</label>
-							<input type="number" id="rollNumber" class="form-input" placeholder="Enter Roll Number">
+							<input type="number" id="rollNumber" class="form-input" placeholder="Enter Roll Number" name="rollNumber">
 						</fieldset>
 						<div class="validation-msg"></div>
 						<div class="step-1-btns" id="step-1-btns">
@@ -89,20 +78,25 @@
 						</div>
 						<div id="msg" class="mt-2"></div>
 						<div id="step-2">
+							<fieldset class="form-group dp-box">
+								<img id="dpPreview">
+								<label for="dp" class="btn btn-primary">Choose Photo</label>
+								<input id="dp" type="file" name="file" style="visibility: hidden;">
+							</fieldset>
 							<fieldset class="form-group">
 								<label>Full Name</label>
-								<input type="text" id="fullname" class="form-input" readonly>
+								<input type="text" id="fullname" class="form-input" readonly name="name">
 							</fieldset>
 							<fieldset class="form-group">
 								<label>Email</label>
-								<input type="email" id="email" class="form-input" placeholder="Enter Email">
+								<input type="email" id="email" class="form-input" placeholder="Enter Email" name="email">
 							</fieldset>
 							<fieldset class="form-group">
 								<label>Password</label>
-								<input type="password" id="password" class="form-input" placeholder="Enter Password">
+								<input type="password" id="password" class="form-input" placeholder="Enter Password" name="password">
 							</fieldset>
 							<fieldset>
-								<button id="signUp-btn" class="form-control btn btn-success">Sign Up</button>
+								<input type="submit" name="signUp" value="Sign Up" class="form-control btn btn-success">
 							</fieldset>
 						</div>
 					</form>
@@ -114,7 +108,6 @@
 				</div>
 			</div>
 		</div>
-	    <?php include 'assets/components/footer.php'; ?>
 	</div>
 	<!-- JS -->
 	<script src="https://kit.fontawesome.com/de41999cf3.js"></script>

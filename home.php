@@ -51,6 +51,9 @@ if (isset($_GET['logout'])) {
 	    				</button>
 	    				</fieldset>
 	    			</div>
+	    			<div id="loader">
+	    				<img src="assets/imgs/loading.png">
+	    			</div>
 	    			<div class="discussions-container container" id="discussions">
 
 		    			<!-- Begin Row-->
