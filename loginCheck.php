@@ -7,7 +7,7 @@ session_start();
 		$password = $_POST['password'];
 
 		$rollNumber = mysqli_real_escape_string($conn, clean($rollNumber));
-		$password = md5(mysqli_real_escape_string($conn, strtolower(clean($password))));
+		$password = md5(mysqli_real_escape_string($conn, clean($password)));
 
 		$sql = "SELECT * FROM `_users` WHERE `roll_no` = '$rollNumber'";
 		$res = mysqli_query($conn, $sql);

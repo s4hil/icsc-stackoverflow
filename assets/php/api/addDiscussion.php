@@ -19,13 +19,19 @@
 		$res = uploadImg($img_name, $img_size, $tmp_name);
 		if ($res['status'] == true) {
 			$u_id = $_SESSION['userID'];
-			$sql = "INSERT INTO `_discussions` (`topic`, `details`, `code_img`, `user_id`) VALUES (
+			$sql2 = "INSERT INTO `_discussions` (
+				`topic`, 
+				`details`, 
+				`code_img`, 
+				`user_id`) VALUES (
 				'$topic',
 				'$details',
-				'$img_name', 
+				'$img_name',
 				'$u_id')";
-			$res = mysqli_query($conn, $sql);
-			if ($res) {
+			$res2 = mysqli_query($conn, $sql2);
+			print_r($res); 
+			print_r($sql); 
+			if ($res2) {
 				?>
 					<script>
 						window.location = "../../../home.php";

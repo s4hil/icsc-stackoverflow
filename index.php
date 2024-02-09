@@ -48,7 +48,7 @@
 					<form class="form login-form" method="POST" action="loginCheck.php">
 						<fieldset class="form-group">
 							<i class="fas fa-user"></i>
-							<input required type="number" name="rollNumber" class="form-input" placeholder="Enter Roll Number">
+							<input required type="text" name="rollNumber" class="form-input" placeholder="Enter Roll Number">
 						</fieldset>
 						<fieldset class="form-group">
 							<i class="fas fa-lock"></i>
