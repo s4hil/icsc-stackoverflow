@@ -45,14 +45,14 @@
 							<?php
 						}
 					?>
-					<form class="form login-form" method="POST" action="loginCheck.php">
+					<form class="form login-form" method="POST" action="loginCheck.php" autocomplete="off">
 						<fieldset class="form-group">
 							<i class="fas fa-user"></i>
-							<input required type="text" name="rollNumber" class="form-input" placeholder="Enter Roll Number">
+							<input required type="text" name="rollNumber" class="form-input" placeholder="Enter Roll Number" value="USN">
 						</fieldset>
 						<fieldset class="form-group">
 							<i class="fas fa-lock"></i>
-							<input required type="password" name="password" class="form-input" placeholder="Enter Password">
+							<input required type="password" name="password" class="form-input" placeholder="Enter Password" value="Password">
 						</fieldset>
 						<fieldset>
 							<input type="submit" value="Login" name="login" class="form-control btn btn-success">
@@ -69,7 +69,7 @@
 					<form class="form sign-up-form" method="POST" action="assets/php/signUp.php" enctype="multipart/form-data">
 						<fieldset class="form-group">
 							<label>Roll Number</label>
-							<input type="number" id="rollNumber" class="form-input" placeholder="Enter Roll Number" name="rollNumber">
+							<input type="text" id="rollNumber" class="form-input" placeholder="Enter Roll Number" name="rollNumber">
 						</fieldset>
 						<div class="validation-msg"></div>
 						<div class="step-1-btns" id="step-1-btns">
@@ -85,7 +85,7 @@
 							</fieldset>
 							<fieldset class="form-group">
 								<label>Full Name</label>
-								<input type="text" id="fullname" class="form-input" readonly name="name">
+								<input type="text" id="fullname" class="form-input" name="name">
 							</fieldset>
 							<fieldset class="form-group">
 								<label>Email</label>

@@ -8,9 +8,9 @@ $(document).ready(()=>{
 
 	// Validating roll No.
 	function validateRollNumber(rollNo) {
-		if (rollNo.length != 8) {
+		if (rollNo.length != 10) {
 			$("#rollNumber").addClass('invalid-input');
-			$(".validation-msg").text("Length must be 8 digits.");
+			$(".validation-msg").text("Length must be 10 digits.");
 			return false;
 		}
 		else {
@@ -24,35 +24,39 @@ $(document).ready(()=>{
 	$("#searchByRoll").click((e)=>{
 		e.preventDefault();
 
-		let rollno = $("#rollNumber").val();
-		if (validateRollNumber(rollno) == true) {
-			let rawData = { rollNumber:rollno };
-			let data = JSON.stringify(rawData);
-			$.ajax({
-				url: "assets/php/api/searchByRollNumber.php",
-				method: "POST",
-				data: data,
-				dataType: "json",
-				success: function (data) {
-					if (data.status == true) {
-						$("#fullname").val(data.name);
-						$("#step-1-btns").css('display', 'none');
-						$("#step-2").fadeIn();
-						$("#email").focus();
-					}
-					else if (data.status == false) {
-						$(".validation-msg").fadeIn();
-						$(".validation-msg").text(data.msg);
-					}
-					else {
-						alert("Something Went Wrong!");
-					}
-				},
-				error: function () {
-					console.log("err with search req");
-				}
-			});
-		}
+		$("#step-1-btns").css('display', 'none');
+		$("#step-2").fadeIn();
+		$("#email").focus();
+
+		// let rollno = $("#rollNumber").val();
+		// if (validateRollNumber(rollno) == true) {
+		// 	let rawData = { rollNumber:rollno };
+		// 	let data = JSON.stringify(rawData);
+		// 	$.ajax({
+		// 		url: "assets/php/api/searchByRollNumber.php",
+		// 		method: "POST",
+		// 		data: data,
+		// 		dataType: "json",
+		// 		success: function (data) {
+		// 			if (data.status == true) {
+		// 				$("#fullname").val(data.name);
+		// 				$("#step-1-btns").css('display', 'none');
+		// 				$("#step-2").fadeIn();
+		// 				$("#email").focus();
+		// 			}
+		// 			else if (data.status == false) {
+		// 				$(".validation-msg").fadeIn();
+		// 				$(".validation-msg").text(data.msg);
+		// 			}
+		// 			else {
+		// 				alert("Something Went Wrong!");
+		// 			}
+		// 		},
+		// 		error: function () {
+		// 			console.log("err with search req");
+		// 		}
+		// 	});
+		// }
 	});
 
 	// Back btn for sign up

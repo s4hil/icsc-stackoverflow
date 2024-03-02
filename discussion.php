@@ -63,13 +63,13 @@
 	    					$topic = htmlentities($row['topic']);
 	    					$details = htmlentities($row['details']);
 	    					$details = htmlentities($row['details']);
-	    					$name = fetcUserByDid($d_id);
+	    					$user = fetcUserByDid($d_id);
 	    				?>
 
 
 		    			<div>
-		    				<img src="assets/imgs/035-junior.png">
-		 					<span><?php echo $name; ?></span>
+		    				<img style="border-radius: 50%;" src="assets/uploads/userImgs/<?php echo $user['user_img']; ?>">
+		 					<span><?php echo $user['full_name']; ?></span>
 	    				</div>
 	    				<a href="home.php" class="btn btn-secondary"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
 	    			</div>

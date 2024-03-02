@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2024 at 12:25 PM
+-- Generation Time: Mar 02, 2024 at 07:49 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -43,7 +43,10 @@ INSERT INTO `_comments` (`c_id`, `comment`, `d_id`, `user_id`, `timestamp`) VALU
 (20, 'hi', '60', '13', '2023-07-04 17:12:22'),
 (21, 'how is it going', '60', '13', '2023-07-04 17:12:30'),
 (22, 'hi', '61', '13', '2023-07-04 17:14:07'),
-(23, 'ok', '60', '13', '2023-12-13 13:46:11');
+(23, 'ok', '60', '13', '2023-12-13 13:46:11'),
+(24, 'ok', '62', '15', '2024-03-02 18:40:12'),
+(25, 'alright', '62', '16', '2024-03-02 18:47:23'),
+(26, 'ok', '60', '16', '2024-03-02 18:47:44');
 
 -- --------------------------------------------------------
 
@@ -66,7 +69,8 @@ CREATE TABLE `_discussions` (
 
 INSERT INTO `_discussions` (`d_id`, `topic`, `details`, `code_img`, `user_id`, `timestamp`) VALUES
 (60, 'funs in py', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy.', '1860.png', '13', '2023-07-04 17:12:05'),
-(61, 'sahil', 'sahil', '9.jpg', '13', '2023-07-04 17:13:44');
+(61, 'sahil', 'sahil', '9.jpg', '13', '2023-07-04 17:13:44'),
+(62, 'test', 'test details', '1.jpg', '15', '2024-03-02 18:39:57');
 
 -- --------------------------------------------------------
 
@@ -200,7 +204,8 @@ CREATE TABLE `_users` (
 --
 
 INSERT INTO `_users` (`user_id`, `roll_no`, `full_name`, `email`, `password`, `user_img`, `timestamp`) VALUES
-(13, '1dt21cs126', 'Sahil Parray', 's', '21232f297a57a5a743894a0e4a801fc3', '', '2023-07-04 16:55:01');
+(15, '1dt21cs116', 'pre', 'p@g.com', '6bf9e70a1f928aba143ef1eebe2720b5', '8221.jpg', '2024-03-02 18:39:18'),
+(16, '1dt21cs126', 'sahil parray', 'sahil@gmail.com', '1006f0ae5a7ece19828a67ac62288e05', '3316.jpg', '2024-03-02 18:46:55');
 
 --
 -- Indexes for dumped tables
@@ -244,13 +249,13 @@ ALTER TABLE `_users`
 -- AUTO_INCREMENT for table `_comments`
 --
 ALTER TABLE `_comments`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `_discussions`
 --
 ALTER TABLE `_discussions`
-  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `_likes`
@@ -268,7 +273,7 @@ ALTER TABLE `_students`
 -- AUTO_INCREMENT for table `_users`
 --
 ALTER TABLE `_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

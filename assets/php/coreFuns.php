@@ -160,7 +160,7 @@ function fetcUserByDid($id)
         $res2 = mysqli_query($conn, $sql2);
         if ($res2) {
             $user = mysqli_fetch_array($res2);
-            return $user['full_name'];
+            return $user;
         }
     }    
 }
